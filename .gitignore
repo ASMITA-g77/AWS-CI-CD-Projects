@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.artifacts/
+
 catboost_info/
 .Python
 build/
@@ -150,6 +150,7 @@ activemq-data/
 *.sage.py
 
 # Environments
+.artifacts/
 .env
 .envrc
 .venv

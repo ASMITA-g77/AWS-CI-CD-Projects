@@ -11,6 +11,9 @@ from sklearn.model_selection import train_test_split
 from src.components.data_transformation import Transforming_Data
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainerMain
+from src.components.model_trainer import ModelTrainerConfig
+
 from dataclasses import dataclass
 
 @dataclass
@@ -57,4 +60,8 @@ if __name__== "__main__":
     train_data,test_data=obj.initiate_data_ingestion()
     
     transformation_obj=Transforming_Data()
-    transformation_obj.initiate_data_transformation(train_data,test_data)
+    training_arr,testing_arr=transformation_obj.initiate_data_transformation(train_data,test_data)
+    
+    model_training_obj=ModelTrainerMain()
+    print(model_training_obj.training_initiate(training_arr=training_arr,testing_arr=testing_arr))
+    
